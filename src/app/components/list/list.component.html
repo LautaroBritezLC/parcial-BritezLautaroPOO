@@ -1,0 +1,54 @@
+<div class="container mt-4 ml-0">
+  <div class="card">
+      <div class="card-body">
+          <span class="h3">Listado de Personal</span>
+            <button class="btn btn-warning btn-lg float-right" routerLink="/create-objets">Agregar</button>
+          <h5 style="margin-top: 20px;" *ngIf="personal.length == 0">No hay datos para mostrar</h5>
+          <table *ngIf="personal.length > 0" class="table table-striped mt-5">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Nombre</th>
+                  <th>Temperatura</th>
+                  <th>Tos</th>
+                  <th>Insuficiencia Respiratoria</th>
+                  <th>Dolor de Garganta</th>
+                  <th>Perdida del Olfato</th>
+                  <th>Perdida del Gusto</th>
+                  <th>Otros Sintomas</th>
+                  <th>Contacto Aislamiento</th>
+                  <th>Contacto Viaje</th>
+                  <th>Lugar</th>
+                  <th>Observaciones</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let personal of personal">
+                  <td>{{ personal.fecha }}</td>
+                  <td>{{ personal.hora }}</td>
+                  <td>{{ personal.nombreyapellido }}</td>
+                  <td>{{ personal.temperatura }}</td>
+                  <td>{{ personal.tos }}</td>
+                  <td>{{ personal.insuficiencia }}</td>
+                  <td>{{ personal.dolorgarganta }}</td>
+                  <td>{{ personal.perdidaolfato }}</td>
+                  <td>{{ personal.perdidagusto }}</td>
+                  <td>{{ personal.otros }}</td>
+                  <td>{{ personal.contactoaislamiento }}</td>
+                  <td>{{ personal.contactoviaje }}</td>
+                  <td>{{ personal.lugar }}</td>
+                  <td>{{ personal.observaciones }}</td>
+                  <td>
+                    <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/edit-objets/', personal.id]"></i>
+                    <i (click)="deletePersonalTabla(personal.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,105 @@
+<div class="container pt-4">
+  <div class="row">
+      <div class="col-lg-6 offset-lg-1">
+          <div class="card text-center">
+              <div class="card-body">
+                  <h3>{{ titulo }}
+                      <div *ngIf="loading" class="spinner-border float-right" role="status">
+                          <span class="sr-only">Loading...</span>
+                        </div>
+                  </h3>
+                  <span *ngIf="submitted && personal.invalid" class="badge badge-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+                  <form class="mt-4" [formGroup]="personal" (ngSubmit)="agregarEditarPersonal()">
+                      <div class="row">
+                          <div class="col">
+                              <input type="fecha" class="form-control form-control-lg" formControlName="fecha"
+                                  placeholder="Fecha" readonly>
+                          </div>
+
+                          <div class="col">
+                            <input type="text" class="form-control form-control-lg" formControlName="hora"
+                                placeholder="Hora" readonly>
+                          </div>
+
+                          <div class="col">
+                            <input type="text" class="form-control form-control-lg" formControlName="nombreyapellido"
+                                placeholder="Nombre">
+                          </div>
+
+                          <div class="col">
+                            <input type="text" class="form-control form-control-lg" formControlName="temperatura"
+                                placeholder="Temperatura">
+                          </div>
+
+                          <div class="col">
+                            <input type="text" class="form-control form-control-lg" formControlName="tos"
+                                placeholder="Tos">
+                          </div>
+
+                      </div>
+
+                      <div class="row mt-3">
+                        <div class="col">
+                          <input type="text" class="form-control form-control-lg" formControlName="insuficiencia"
+                              placeholder="Insuficiencia Respiratoria">
+                        </div>
+
+                        <div class="col">
+                          <input type="text" class="form-control form-control-lg" formControlName="dolorgarganta"
+                              placeholder="Dolor de Garganta">
+                        </div>
+
+                        <div class="col">
+                          <input type="text" class="form-control form-control-lg" formControlName="perdidaolfato"
+                              placeholder="Perdida Olfato">
+                        </div>
+
+                        <div class="col">
+                          <input type="text" class="form-control form-control-lg" formControlName="perdidagusto"
+                              placeholder="Perdida Gusto">
+                        </div>
+                      </div>
+
+                      <div class="row mt-3">
+                        <div class="col">
+                            <input type="text" class="form-control form-control-lg" formControlName="otros"
+                                placeholder="Otros">
+                        </div>
+
+                        <div class="col">
+                          <input type="text" class="form-control form-control-lg" formControlName="contactoaislamiento"
+                              placeholder="Contacto Aislamiento">
+                        </div>
+
+                        <div class="col">
+                          <input type="text" class="form-control form-control-lg" formControlName="contactoviaje"
+                              placeholder="Contacto Viaje">
+                        </div>
+
+                        <div class="col">
+                          <input  type="text" class="form-control form-control-lg" formControlName="lugar"
+                              placeholder="Lugar">
+                        </div>
+
+                      </div>
+
+                      <div class="row mt-3">
+                        <div class="col">
+                          <input type="text" class="form-control form-control-lg" formControlName="observaciones"
+                              placeholder="Observaciones">
+                        </div>
+                      </div>
+
+                      <div class="mt-3">
+                        <button type="text" class="btn btn-info btn-lg mr-3"
+                              routerLink="/list-objets">Volver</button>
+                          <button type="submit" class="btn btn-success btn-lg">Agregar</button>
+
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+

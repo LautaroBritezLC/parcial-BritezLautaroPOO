@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "empleados-bccc9": {
+      "hosting": {
+        "empleados": [
+          "empleados-bccc9"
+        ]
+      }
+    },
+    "angularcrud-3e66f": {
+      "hosting": {
+        "empleados": [
+          "angularcrud-3e66f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "parcial-britezlautaro"
+  }
+}
